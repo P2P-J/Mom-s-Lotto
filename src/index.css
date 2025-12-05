@@ -1,0 +1,66 @@
+:root {
+  /* 컬러 팔레트 */
+  --color-primary: #6366f1;
+  --color-secondary: #8b5cf6;
+  --color-accent: #ec4899;
+  --color-bg: #0f172a;
+  --color-card: #1e293b;
+  --color-text: #f1f5f9;
+  --color-text-dim: #94a3b8;
+
+  /* 폰트 */
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* 기본 색상 */
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  /* 폰트 렌더링 */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

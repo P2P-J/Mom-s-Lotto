@@ -1,0 +1,409 @@
+/* ===== 컨테이너 ===== */
+.app-container {
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+/* ===== 헤더 ===== */
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-accent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.sparkle {
+  display: inline-block;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-dim);
+  font-weight: 400;
+}
+
+/* ===== 컨텐츠 ===== */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ===== 추첨 방식 선택 ===== */
+.method-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.method-card {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.method-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.method-card.active {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.3),
+    rgba(139, 92, 246, 0.3)
+  );
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.method-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.method-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--color-text);
+}
+
+.method-description {
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  line-height: 1.4;
+}
+
+/* ===== 액션 버튼 ===== */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: white;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ===== 번호 표시 ===== */
+.number-display {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.main-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.number-ball {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: popup 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+}
+
+.number-ball::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+}
+
+.bonus-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(99, 102, 241, 0.2);
+}
+
+.bonus-label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.bonus-ball {
+  animation: popup 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s backwards,
+    pulse 2s ease-in-out 1s infinite;
+}
+
+/* ===== 통계 ===== */
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  animation: fadeIn 0.5s ease-out 0.3s backwards;
+}
+
+.stat-card {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  margin-bottom: 0.3rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ===== 푸터 ===== */
+.footer {
+  margin-top: 4rem;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+  animation: fadeIn 1s ease-out;
+}
+
+.footer p {
+  color: var(--color-text-dim);
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+.disclaimer {
+  font-size: 0.8rem !important;
+  opacity: 0.7;
+}
+
+/* ===== 애니메이션 ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(236, 72, 153, 0.5);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(20deg);
+  }
+}
+
+/* ===== 반응형 디자인 ===== */
+
+/* 태블릿 (768px ~ 1023px) */
+@media (max-width: 1023px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .statistics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 모바일 (320px ~ 767px) */
+@media (max-width: 767px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .method-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .method-card {
+    padding: 1.25rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .number-display {
+    padding: 1.5rem;
+  }
+
+  .main-numbers {
+    gap: 0.75rem;
+  }
+
+  .number-ball {
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
+  }
+
+  .statistics {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 1rem;
+  }
+
+  .stat-content {
+    flex: 1;
+  }
+}
+
+/* 작은 모바일 (~ 400px) */
+@media (max-width: 400px) {
+  .main-numbers {
+    gap: 0.5rem;
+  }
+
+  .number-ball {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+}
