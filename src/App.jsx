@@ -5,11 +5,12 @@ import MethodSelector from "./components/MethodSelector";
 import NumberDisplay from "./components/NumberDisplay";
 import Statistics from "./components/Statistics";
 import ActionButtons from "./components/ActionButtons";
+import DataInsights from "./components/DataInsights";
 import { generateNumbers } from "./utils/numberGenerator";
 import { calculateStatistics } from "./utils/statistics";
 
 function App() {
-  const [selectedMethod, setSelectedMethod] = useState("smart");
+  const [selectedMethod, setSelectedMethod] = useState("hot");
   const [result, setResult] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -62,6 +63,8 @@ function App() {
             <Statistics stats={stats} />
           </>
         )}
+
+        <DataInsights />
       </div>
 
       <footer className="footer">

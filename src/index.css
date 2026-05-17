@@ -1,16 +1,26 @@
 :root {
-  /* 컬러 팔레트 */
-  --color-primary: #6366f1;
-  --color-secondary: #8b5cf6;
-  --color-accent: #ec4899;
-  --color-bg: #0f172a;
-  --color-card: #1e293b;
-  --color-text: #f1f5f9;
-  --color-text-dim: #94a3b8;
+  /* 컬러 팔레트 — Muted Rose × Deep Charcoal */
+  --color-bg: #171717;
+  --color-bg-alt: #1f1f1f;
+  --color-card: #1c1c1c;
+  --color-card-hover: #242424;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
 
-  /* 폰트 */
+  --color-text: #f5f5f4;
+  --color-text-dim: #a8a29e;
+  --color-text-muted: #78716c;
+
+  /* 액센트: Rose */
+  --color-rose: #fb7185;
+  --color-rose-soft: #fda4af;
+  --color-rose-deep: #e11d48;
+  --color-rose-glow: rgba(251, 113, 133, 0.18);
+
+  /* 폰트: 한글 본문 + 이모지(OS 기본 컬러 이모지 폰트 fallback) */
   font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui,
-    sans-serif;
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
   line-height: 1.6;
   font-weight: 400;
 
@@ -40,7 +50,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: var(--color-bg);
   overflow-x: hidden;
 }
 
@@ -62,5 +72,10 @@ button {
 
 button:disabled {
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 0.5;
+}
+
+::selection {
+  background: var(--color-rose);
+  color: #fff;
 }

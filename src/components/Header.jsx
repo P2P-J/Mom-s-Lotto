@@ -9,7 +9,7 @@ export default function Header() {
         엄마를 위한 로또 번호 추첨기
         <span className="sparkle">✨</span>
       </h1>
-      <p className="subtitle">데이터 기반 스마트 추천으로 특별한 행운을</p>
+      <p className="subtitle">역대 동행복권 당첨 데이터로 뽑아드리는 특별한 행운</p>
     </header>
   );
 }

@@ -13,7 +13,7 @@ export default function NumberDisplay({ numbers, bonus }) {
       <div className="main-numbers">
         {numbers.map((num, index) => (
           <div
-            key={index}
+            key={num}
             className="number-ball"
             style={{
               backgroundColor: getNumberColor(num),
